@@ -1,0 +1,312 @@
+/* The following line can be included in a src/App.scss */
+
+@import "~bootstrap/scss/bootstrap";
+@import "react-toggle/style.css";
+@import "~datatables.net-bs4/css/dataTables.bootstrap4.css";
+@import "~datatables.net-select-bs4/css/select.bootstrap4.css";
+@import "react-notifications-component/dist/theme.css";
+
+$paragraph-family: "Open Sans", sans-serif;
+$heading-family: "Roboto", sans-serif;
+
+// colors:
+$cl-wt: #ffffff;
+$cl-dark: #212529;
+$cl-navblack: #363d4d;
+// Main
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $heading-family;
+}
+
+p,
+small,
+li,
+a {
+  font-family: $paragraph-family;
+}
+
+body {
+  background: $cl-wt;
+  color: $cl-dark;
+  font-family: $paragraph-family;
+}
+
+// Header
+
+.dropdown-menu {
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+  border: none;
+}
+
+// Button
+
+.btn-danger-gradiant {
+  background: #ff4d7e;
+  background: -webkit-linear-gradient(
+    legacy-direction(to right),
+    #ff4d7e 0%,
+    #ff6a5b 100%
+  );
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#ff4d7e),
+    to(#ff6a5b)
+  );
+  background: -webkit-linear-gradient(left, #ff4d7e 0%, #ff6a5b 100%);
+  background: -o-linear-gradient(left, #ff4d7e 0%, #ff6a5b 100%);
+  background: linear-gradient(to right, #ff4d7e 0%, #ff6a5b 100%);
+
+  &:hover {
+    background: #ff6a5b;
+    background: -webkit-linear-gradient(
+      legacy-direction(to right),
+      #ff6a5b 0%,
+      #ff4d7e 100%
+    );
+    background: -webkit-gradient(
+      linear,
+      left top,
+      right top,
+      from(#ff6a5b),
+      to(#ff4d7e)
+    );
+    background: -webkit-linear-gradient(left, #ff6a5b 0%, #ff4d7e 100%);
+    background: -o-linear-gradient(left, #ff6a5b 0%, #ff4d7e 100%);
+    background: linear-gradient(to right, #ff6a5b 0%, #ff4d7e 100%);
+  }
+}
+
+// Header
+
+.nav {
+  &-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  &-link {
+    font-size: 1rem;
+    line-height: 1.75rem;
+    font-weight: 600;
+    color: $cl-navblack;
+    line-height: 1.5rem;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    margin-left: 2.5rem;
+    transition: color 0.15s ease, background-color 0.15s ease;
+  }
+
+  &-button {
+    background-color: $cl-navblack;
+    color: $cl-wt;
+    transition: color 0.15s ease, background-color 0.15s ease;
+    padding: 0.625rem 1.5rem;
+    border: 2px solid $cl-navblack;
+    border-radius: 4px;
+    vertical-align: middle;
+    cursor: pointer;
+    margin-left: 2.5rem;
+
+    &:hover {
+      text-decoration: underline;
+      color: $cl-wt;
+    }
+  }
+}
+
+// NotFound
+
+.fof {
+  display: table;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+
+  &-main {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  h1 {
+    font-size: 50px;
+    display: inline-block;
+    padding-right: 12px;
+    animation: type 0.5s alternate infinite;
+  }
+}
+
+@keyframes type {
+  from {
+    box-shadow: inset -3px 0px 0px #888;
+  }
+  to {
+    box-shadow: inset -3px 0px 0px transparent;
+  }
+}
+
+.paginate_button {
+  padding: 0px !important;
+  margin: 0px !important;
+  &:hover {
+    border: 1px solid !important;
+  }
+
+  &.disabled {
+    &:hover {
+      color: transparent !important;
+    }
+  }
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled,
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover,
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active {
+  color: transparent !important;
+}
+
+table {
+  color: #6c757d !important;
+  font-size: 0.95rem !important;
+  &.dataTable > thead {
+    &.sorting_asc:before,
+    .sorting_asc:after,
+    .sorting_desc:before,
+    .sorting_desc:after,
+    .sorting:before,
+    .sorting:after,
+    .sorting_asc:before {
+      display: none !important;
+    }
+  }
+  &.dataTable {
+    border-top: 0px !important;
+    &.no-footer {
+      border-bottom: 1px solid lightgrey !important;
+    }
+    tbody td,
+    thead th {
+      padding: 0.75rem !important;
+      border-bottom: 1px solid lightgray;
+    }
+  }
+}
+
+// NOTIFICATIONS
+
+.notification {
+
+  &-custom-icon {
+    flex-basis: 20%;
+    position: relative;
+    display: inline-block;
+    padding: 8px 8px 8px 12px;
+  
+    .fa {
+      top: 50%;
+      left: 50%;
+      color: #fff;
+      font-size: 28px;
+      position: relative;
+      transform: translate(-50%, -50%);
+    }
+  }
+  &__close {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+
+    :after {
+      content: "\D7";
+      position: absolute;
+      transform: translate(-50%, -50%);
+      color: #fff;
+      font-size: 12px;
+      left: 50%;
+      top: 50%;
+    }
+  }
+
+  &__title {
+    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  &-custom-content {
+    padding: 8px 15px;
+    display: inline-block;
+    width: 100%;
+  }
+  &__message{
+    text-transform: capitalize!important;
+  }
+
+  &-message {
+    color: #fff;
+    max-width: calc(100% - 15px);
+    font-size: 14px;
+    line-height: 150%;
+    word-wrap: break-word;
+    margin-bottom: 0;
+    text-transform: capitalize!important;
+    margin-top: 0;
+  }
+
+  &-custom {
+    &-success {
+      width: 100%;
+      display: flex;
+      background-color: #28a745;
+
+      .notification-custom-icon {
+        border-left: 8px solid #1f8838;
+      }
+    }
+
+    &-danger {
+      width: 100%;
+      display: flex;
+      background-color: #dc3545;
+
+      .notification-custom-icon {
+        border-left: 8px solid #a71d2a;
+      }
+    }
+
+    &-info {
+      width: 100%;
+      display: flex;
+      background-color: #17a2b8;
+
+      .notification-custom-icon {
+        border-left: 8px solid #138b9e;
+      }
+    }
+
+    &-warning {
+      width: 100%;
+      display: flex;
+      background-color: #eab000;
+
+      .notification-custom-icon {
+        border-left: 8px solid #9e7600;
+      }
+    }
+    
+  }
+}
