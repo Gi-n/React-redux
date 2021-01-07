@@ -5,8 +5,8 @@ Exemplary real world application built with React + Redux
 To get the frontend running locally:
 
 Clone this repo
-npm install to install all req'd dependencies
-npm start to start the local server (this project uses create-react-app)
+* npm install to install all req'd dependencies
+* npm start to start the local server (this project uses create-react-app)
 
 Local web server will use port 4100 instead of standard React's port 3000 to prevent conflicts with some backends like Node or Rails. You can configure port in scripts section of package.json: we use cross-env to set environment variable PORT for React scripts, this is Windows-compatible way of setting environment variables.
 
@@ -22,8 +22,8 @@ If you want to change the API URL to a local server, simply edit .env and change
 
 General functionality:
 
-Authenticate users via JWT (login/signup pages + logout button on settings page)
-CRUD users (sign up & settings page - no deleting required)
-CRUD Notes
-CRUD Comments on Notes (no updating required)
-GET and display paginated lists of Notes
+* Authenticate users via JWT (login/signup pages + logout button on settings page)
+* CRUD users
+* CRUD Notes
+* CRUD Comments on Notes (no updating required)
+* GET and display paginated lists of Notes
